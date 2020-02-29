@@ -2,5 +2,5 @@
 <resources>
     <color name="colorPrimary">#131F25</color>
     <color name="colorPrimaryDark">#0F1314</color>
-    <color name="toolbarColor">@color/colorPrimary</color>
+    <color name="toolbarColor">@color/colorPrimaryDark</color>
 </resources>
