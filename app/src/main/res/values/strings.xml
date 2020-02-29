@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Desafio Android</string>
     <string name="erro_carregar">Erro ao carregar informacoes</string>
+    <string name="nome_personagem">Nome Personagem</string>
 </resources>
