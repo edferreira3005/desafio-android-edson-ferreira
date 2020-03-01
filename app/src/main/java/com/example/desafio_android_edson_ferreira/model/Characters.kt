@@ -8,7 +8,7 @@ class Characters : Serializable {
 
     @SerializedName("id")
     var id : Int? = null
-    @SerializedName("name")
+    @SerializedName("name", alternate = ["title"])
     var nome : String? = null
     @SerializedName("description")
     var description : String? = null
@@ -20,6 +20,9 @@ class Characters : Serializable {
 
     var modifiedFormated : String? = null
     var bitmap : ByteArray? = null
+
+    @SerializedName("prices")
+    var lista_preco : List<Prices>? = null
 
     fun getPath() : String = thumb!!.path + File.separator + thumb!!.file_uncanny + "." + thumb!!.extension
 }

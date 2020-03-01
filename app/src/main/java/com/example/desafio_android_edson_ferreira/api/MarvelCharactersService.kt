@@ -19,6 +19,10 @@ class MarvelCharactersService {
         return api.getCharacters(request())
     }
 
+    fun getComics(id : Int): Single<DadosJson>{
+        return api.getCharacters(request())
+    }
+
     private fun request() : HashMap<String, String> {
         return Util.retornaHashJson(
             "=",

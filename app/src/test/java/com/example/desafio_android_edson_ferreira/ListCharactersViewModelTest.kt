@@ -24,7 +24,7 @@ import java.util.concurrent.Executor
 
 class ListCharactersViewModelTest {
     @Rule @JvmField
-    public var rule = InstantTaskExecutorRule()
+    var rule = InstantTaskExecutorRule()
 
     @Mock
     lateinit var charactersService: MarvelCharactersService

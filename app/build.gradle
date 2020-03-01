@@ -27,7 +27,6 @@ android {
 }
 
 def lifecycleExtensionVersion = '1.1.1'
-def butterknifeVersion = '10.1.0'
 def supportVersion = '29.0.0'
 def retrofitVersion = '2.3.0'
 def glideVersion = '4.9.0'
