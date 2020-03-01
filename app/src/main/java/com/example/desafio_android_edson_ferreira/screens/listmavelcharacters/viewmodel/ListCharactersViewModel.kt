@@ -7,6 +7,7 @@ import com.example.desafio_android_edson_ferreira.model.Characters
 import com.example.desafio_android_edson_ferreira.model.DadosJson
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import com.example.desafio_android_edson_ferreira.api.di.DaggerApiComponent
+import com.example.desafio_android_edson_ferreira.utils.Constants
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -27,14 +28,14 @@ class ListCharactersViewModel : ViewModel() {
         DaggerApiComponent.create().inject(this)
     }
 
-    fun refresh() {
-        fetchMarvelCharacters()
+    fun refresh(offset : Int) {
+        fetchMarvelCharacters(offset)
     }
 
-    private fun fetchMarvelCharacters() {
+    private fun fetchMarvelCharacters(offset : Int) {
         loading.value = true
         disposable.add(
-            charactersService.getChatacters()
+            charactersService.getChatacters(offset)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<DadosJson>() {

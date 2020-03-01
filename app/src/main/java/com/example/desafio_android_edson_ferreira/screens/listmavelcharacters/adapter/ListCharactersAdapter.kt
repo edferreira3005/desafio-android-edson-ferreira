@@ -1,5 +1,6 @@
 package com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,6 @@ class ListCharactersAdapter
     RecyclerView.Adapter<ListCharactersAdapter.ListCharactersViewHolder>() {
 
     fun updateCountries(newListCharacters: ArrayList<Characters>) {
-        listCharacters.clear()
         listCharacters.addAll(newListCharacters)
         notifyDataSetChanged()
     }
