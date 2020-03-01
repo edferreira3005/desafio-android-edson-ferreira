@@ -7,4 +7,5 @@ object Constants {
 
     var TAG_CHARACTER_INFO = "characterinfo"
     var TAG_LIST_CHARACTERS = "listcharacters"
+    var TAG_CHARACTER_HQ = "characterhq"
 }

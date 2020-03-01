@@ -20,7 +20,7 @@ class MarvelCharactersService {
     }
 
     fun getComics(id : Int): Single<DadosJson>{
-        return api.getCharacters(request())
+        return api.getComics(id,request())
     }
 
     private fun request() : HashMap<String, String> {

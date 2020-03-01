@@ -33,5 +33,14 @@ class FragmentCharacterInfo : Fragment() {
             tvName.text = character.nome
             tvDescription.text = character.description
         }
+
+        btnHQ.setOnClickListener {
+            val onClick = activity as onClickHQ
+            onClick.onClickHQ(character!!.id!!)
+        }
+    }
+
+    interface onClickHQ{
+        fun onClickHQ(id : Int)
     }
 }

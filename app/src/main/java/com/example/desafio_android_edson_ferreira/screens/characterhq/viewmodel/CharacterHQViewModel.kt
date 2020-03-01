@@ -13,10 +13,11 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class CharacterHQViewModel constructor(private val id : Int) : ViewModel() {
+class CharacterHQViewModel : ViewModel() {
     var characters: MutableLiveData<ArrayList<Characters>> = MutableLiveData()
     var charactersLoadError = MutableLiveData<Boolean>()
     var loading = MutableLiveData<Boolean>()
+    var id = 0
 
     @Inject
     lateinit var charactersService: MarvelCharactersService
@@ -64,6 +65,10 @@ class CharacterHQViewModel constructor(private val id : Int) : ViewModel() {
         }
 
         return expensiveComic
+    }
+
+    fun setIdCharacter(id : Int){
+        this.id = id
     }
 
     override fun onCleared() {
