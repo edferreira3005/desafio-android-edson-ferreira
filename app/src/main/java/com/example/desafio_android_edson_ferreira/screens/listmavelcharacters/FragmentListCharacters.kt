@@ -9,6 +9,7 @@ import com.example.desafio_android_edson_ferreira.R
 
 
 class FragmentListCharacters : Fragment() {
+    val TAG = "listcharacters"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_list_characters, container, false)

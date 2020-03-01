@@ -9,5 +9,5 @@ import java.util.HashMap
 
 interface MarvelCharactersApi {
     @GET("/v1/public/characters")
-    fun getCharacters(@QueryMap data: HashMap<String, String>): Single<Call<DadosJson>>
+    fun getCharacters(@QueryMap data: HashMap<String, String>): Single<DadosJson>
 }

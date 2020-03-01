@@ -1,6 +1,7 @@
 package com.example.desafio_android_edson_ferreira.api.di
 
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersApi
+import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -20,5 +21,9 @@ class ApiModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create<MarvelCharactersApi>(MarvelCharactersApi::class.java)
+    }
+
+    fun getService(): MarvelCharactersService {
+        return MarvelCharactersService()
     }
 }

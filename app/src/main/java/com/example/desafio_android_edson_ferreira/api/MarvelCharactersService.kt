@@ -16,7 +16,7 @@ class MarvelCharactersService {
         DaggerApiComponent.create().inject(this)
     }
 
-    fun getCountries(): Single<Call<DadosJson>>{
+    fun getChatacters(): Single<DadosJson>{
         return api.getCharacters(request())
     }
 
