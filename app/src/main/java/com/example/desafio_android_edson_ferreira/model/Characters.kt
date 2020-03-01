@@ -1,7 +1,8 @@
-package br.com.meuprojetomarvel.marvelcharacters.model
+package com.example.desafio_android_edson_ferreira.model
 
-import android.graphics.Bitmap
+import br.com.meuprojetomarvel.marvelcharacters.model.Thumbnail
 import com.google.gson.annotations.SerializedName
+import java.io.File
 import java.io.Serializable
 
 class Characters : Serializable {
@@ -20,4 +21,6 @@ class Characters : Serializable {
 
     var modifiedFormated : String? = null
     var bitmap : ByteArray? = null
+
+    fun getPath() : String = thumb!!.path + File.separator + thumb!!.file_uncanny + "." + thumb!!.extension
 }

@@ -3,7 +3,7 @@ package com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.v
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import br.com.meuprojetomarvel.marvelcharacters.model.Characters
+import com.example.desafio_android_edson_ferreira.model.Characters
 import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import com.example.desafio_android_edson_ferreira.api.di.DaggerApiComponent
@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class ListCharactersViewModel : ViewModel() {
-    var characters: MutableLiveData<List<Characters>> = MutableLiveData()
+    var characters: MutableLiveData<ArrayList<Characters>> = MutableLiveData()
     var charactersLoadError = MutableLiveData<Boolean>()
     var loading = MutableLiveData<Boolean>()
 

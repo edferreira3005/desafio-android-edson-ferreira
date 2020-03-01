@@ -1,7 +1,7 @@
 package com.example.desafio_android_edson_ferreira
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import br.com.meuprojetomarvel.marvelcharacters.model.Characters
+import com.example.desafio_android_edson_ferreira.model.Characters
 import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
 import br.com.meuprojetomarvel.marvelcharacters.model.DataCharacters
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
