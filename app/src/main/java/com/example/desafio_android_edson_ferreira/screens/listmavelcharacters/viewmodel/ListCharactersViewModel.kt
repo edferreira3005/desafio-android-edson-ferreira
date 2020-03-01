@@ -20,6 +20,7 @@ class ListCharactersViewModel : ViewModel() {
 
     @Inject
     lateinit var charactersService: MarvelCharactersService
+
     private val disposable = CompositeDisposable()
 
     init {

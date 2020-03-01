@@ -23,6 +23,7 @@ class ApiModule {
             .create<MarvelCharactersApi>(MarvelCharactersApi::class.java)
     }
 
+    @Provides
     fun getService(): MarvelCharactersService {
         return MarvelCharactersService()
     }
