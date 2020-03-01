@@ -46,6 +46,15 @@ class ListCharactersAdapter
                 itemView.imgCharacter, character.getPath().replace("http","https"),
                 Util.getProgressDrawable(itemView.imgCharacter.context)
             )
+
+            itemView.lnCharacter.setOnClickListener {
+                val onClick = itemView.context as OnClickCharacter
+                onClick.onClick(character)
+            }
         }
+    }
+
+    interface OnClickCharacter{
+        fun onClick(character: Characters)
     }
 }

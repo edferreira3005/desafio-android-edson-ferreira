@@ -3,9 +3,13 @@ package com.example.desafio_android_edson_ferreira.screens
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.desafio_android_edson_ferreira.R
+import com.example.desafio_android_edson_ferreira.model.Characters
+import com.example.desafio_android_edson_ferreira.screens.characterinfo.FragmentCharacterInfo
 import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.FragmentListCharacters
+import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.adapter.ListCharactersAdapter
+import com.example.desafio_android_edson_ferreira.utils.Constants
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ListCharactersAdapter.OnClickCharacter  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,8 +17,41 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.frame, FragmentListCharacters(), FragmentListCharacters().TAG)
+            .add(R.id.frame, FragmentListCharacters(), Constants.TAG_LIST_CHARACTERS)
             .disallowAddToBackStack()
-            .commit();
+            .commit()
+    }
+
+    override fun onClick(characters: Characters) {
+        val bundle = Bundle()
+        val fragment = FragmentCharacterInfo()
+
+        bundle.putSerializable("character", characters)
+        fragment.arguments = bundle
+
+        removeFragments()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frame, fragment, Constants.TAG_CHARACTER_INFO)
+            .disallowAddToBackStack()
+            .commit()
+    }
+
+    override fun onBackPressed() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.frame)
+        if (currentFragment is FragmentListCharacters)
+            finish()
+        else if(currentFragment is FragmentCharacterInfo) {
+            removeFragments()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frame, FragmentListCharacters(), Constants.TAG_CHARACTER_INFO)
+                .disallowAddToBackStack()
+                .commit()
+        }
+    }
+
+    fun removeFragments(){
+        for (fragment in supportFragmentManager.fragments) {
+            supportFragmentManager.beginTransaction().remove(fragment).commit()
+        }
     }
 }

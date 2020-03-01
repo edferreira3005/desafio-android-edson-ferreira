@@ -16,7 +16,6 @@ import java.util.*
 
 class FragmentListCharacters : Fragment() {
 
-    val TAG = "listcharacters"
     private lateinit var viewModel: ListCharactersViewModel
     private val adapter: ListCharactersAdapter = ListCharactersAdapter(ArrayList())
 

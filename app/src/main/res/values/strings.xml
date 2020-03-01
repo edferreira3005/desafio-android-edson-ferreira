@@ -2,4 +2,6 @@
     <string name="app_name">Desafio Android</string>
     <string name="erro_carregar">Erro ao carregar informacoes</string>
     <string name="nome_personagem">Nome Personagem</string>
+    <string name="descricao_personagem">Descricao do personagem</string>
+    <string name="hq">HQ Mais Cara</string>
 </resources>

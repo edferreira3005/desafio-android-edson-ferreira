@@ -5,4 +5,6 @@ object Constants {
     var HASH = "a2468d96e16b7f74bf05a8985b761f1d"
     var TS = "1"
 
+    var TAG_CHARACTER_INFO = "characterinfo"
+    var TAG_LIST_CHARACTERS = "listcharacters"
 }
