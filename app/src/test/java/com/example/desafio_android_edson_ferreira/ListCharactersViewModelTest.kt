@@ -2,8 +2,8 @@ package com.example.desafio_android_edson_ferreira
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.desafio_android_edson_ferreira.model.Characters
-import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
-import br.com.meuprojetomarvel.marvelcharacters.model.DataCharacters
+import com.example.desafio_android_edson_ferreira.model.DadosJson
+import com.example.desafio_android_edson_ferreira.model.DataCharacters
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.viewmodel.ListCharactersViewModel
 import io.reactivex.Scheduler

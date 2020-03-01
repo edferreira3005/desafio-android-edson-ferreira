@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.desafio_android_edson_ferreira.model.Characters
-import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
+import com.example.desafio_android_edson_ferreira.model.DadosJson
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import com.example.desafio_android_edson_ferreira.api.di.DaggerApiComponent
 import io.reactivex.android.schedulers.AndroidSchedulers

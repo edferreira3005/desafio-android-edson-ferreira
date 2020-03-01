@@ -1,6 +1,5 @@
 package com.example.desafio_android_edson_ferreira.model
 
-import br.com.meuprojetomarvel.marvelcharacters.model.Thumbnail
 import com.google.gson.annotations.SerializedName
 import java.io.File
 import java.io.Serializable

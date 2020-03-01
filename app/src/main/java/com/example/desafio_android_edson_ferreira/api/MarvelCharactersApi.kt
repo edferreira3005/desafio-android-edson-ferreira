@@ -1,8 +1,7 @@
 package com.example.desafio_android_edson_ferreira.api
 
-import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
+import com.example.desafio_android_edson_ferreira.model.DadosJson
 import io.reactivex.Single
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 import java.util.HashMap

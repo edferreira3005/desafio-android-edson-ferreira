@@ -1,11 +1,10 @@
 package com.example.desafio_android_edson_ferreira.api
 
-import br.com.meuprojetomarvel.marvelcharacters.model.DadosJson
+import com.example.desafio_android_edson_ferreira.model.DadosJson
 import com.example.desafio_android_edson_ferreira.api.di.DaggerApiComponent
 import com.example.desafio_android_edson_ferreira.utils.Constants
 import com.example.desafio_android_edson_ferreira.utils.Util
 import io.reactivex.Single
-import retrofit2.Call
 import java.util.HashMap
 import javax.inject.Inject
 
