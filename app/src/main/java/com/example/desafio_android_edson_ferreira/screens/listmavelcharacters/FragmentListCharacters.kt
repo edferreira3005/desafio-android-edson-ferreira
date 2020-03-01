@@ -50,7 +50,8 @@ class FragmentListCharacters : Fragment() {
 
                 override fun carregarMaisItens() {
                     isLoading = true
-                    viewModel.refresh(offset.plus(Constants.LIMITE))
+                    offset += Constants.LIMITE
+                    viewModel.refresh(offset)
                 }
             })
 
