@@ -17,22 +17,31 @@ class MarvelCharactersService {
     }
 
     fun getChatacters(offset : Int): Single<DadosJson>{
-        return api.getCharacters(request(offset))
+        return api.getCharacters(request(offset,true))
     }
 
     fun getComics(id : Int): Single<DadosJson>{
-        return api.getComics(id,request(Constants.LIMITE))
+        return api.getComics(id,request(0,false))
     }
 
-    private fun request(offset : Int) : HashMap<String, String> {
+    private fun request(offset : Int, withOffSet : Boolean) : HashMap<String, String> {
         Log.e("offset",offset.toString())
-        return Util.retornaHashJson(
-            "=",
-            String.format("ts=%s", Constants.TS),
-            String.format("apikey=%s", Constants.PUBLIC_KEY),
-            String.format("hash=%s", Constants.HASH),
-            String.format("limit=%s", Constants.LIMITE.toString()),
-            String.format("offset=%s", offset.toString())
-        )
+
+        if(withOffSet)
+            return Util.retornaHashJson(
+                "=",
+                String.format("ts=%s", Constants.TS),
+                String.format("apikey=%s", Constants.PUBLIC_KEY),
+                String.format("hash=%s", Constants.HASH),
+                String.format("limit=%s", Constants.LIMITE.toString()),
+                String.format("offset=%s", offset.toString())
+            )
+        else
+            return Util.retornaHashJson(
+                "=",
+                String.format("ts=%s", Constants.TS),
+                String.format("apikey=%s", Constants.PUBLIC_KEY),
+                String.format("hash=%s", Constants.HASH)
+            )
     }
 }
