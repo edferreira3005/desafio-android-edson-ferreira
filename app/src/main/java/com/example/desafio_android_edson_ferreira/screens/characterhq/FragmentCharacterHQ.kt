@@ -53,12 +53,17 @@ class FragmentCharacterHQ : Fragment() {
                     if(character.lista_preco!!.isNotEmpty())
                         tvPrice.text = character.lista_preco!![0].price.toString()
                 }
-            }
+            }else
+                error.visibility = View.VISIBLE
         })
 
         viewModel.charactersLoadError.observe(this, androidx.lifecycle.Observer { isError ->
-            if(isError != null)
-                error.visibility = if(isError) View.VISIBLE else View.GONE
+            if(isError != null) {
+                error.visibility = if (isError) View.VISIBLE else View.GONE
+
+                if(isError)
+                    lnComic.visibility = View.GONE
+            }
         })
 
         viewModel.loading.observe(this, androidx.lifecycle.Observer { isLoading ->

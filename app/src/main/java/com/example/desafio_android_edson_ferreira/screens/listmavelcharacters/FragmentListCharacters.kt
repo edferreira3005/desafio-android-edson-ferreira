@@ -67,12 +67,16 @@ class FragmentListCharacters : Fragment() {
 
                 isLoading = false
                 isLastPage = false
-            }
+            }else
+                list_error.visibility = View.VISIBLE
         })
 
         viewModel.charactersLoadError.observe(this, androidx.lifecycle.Observer { isError ->
-            if(isError != null)
-                list_error.visibility = if(isError) View.VISIBLE else View.GONE
+            if(isError != null) {
+                list_error.visibility = if (isError) View.VISIBLE else View.GONE
+                if(isError)
+                    charactersList.visibility = View.GONE
+            }
         })
 
         viewModel.loading.observe(this, androidx.lifecycle.Observer { isLoading ->
