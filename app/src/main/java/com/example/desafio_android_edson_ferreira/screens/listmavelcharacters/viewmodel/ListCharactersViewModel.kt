@@ -8,6 +8,7 @@ import com.example.desafio_android_edson_ferreira.model.DadosJson
 import com.example.desafio_android_edson_ferreira.api.MarvelCharactersService
 import com.example.desafio_android_edson_ferreira.api.di.DaggerApiComponent
 import com.example.desafio_android_edson_ferreira.utils.Constants
+import com.example.desafio_android_edson_ferreira.utils.exception.MarvelApiException
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -18,6 +19,7 @@ class ListCharactersViewModel : ViewModel() {
     var characters: MutableLiveData<ArrayList<Characters>> = MutableLiveData()
     var charactersLoadError = MutableLiveData<Boolean>()
     var loading = MutableLiveData<Boolean>()
+    var exception = MutableLiveData<Throwable>()
 
     @Inject
     lateinit var charactersService: MarvelCharactersService
@@ -48,7 +50,7 @@ class ListCharactersViewModel : ViewModel() {
                     override fun onError(e: Throwable) {
                         charactersLoadError.value = true
                         loading.value = false
-                        Log.e("erro", e.toString())
+                        exception.value = e
                     }
                 })
         )

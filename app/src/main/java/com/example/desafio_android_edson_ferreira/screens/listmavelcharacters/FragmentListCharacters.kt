@@ -13,6 +13,7 @@ import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.ad
 import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.adapter.Pagination
 import com.example.desafio_android_edson_ferreira.screens.listmavelcharacters.viewmodel.ListCharactersViewModel
 import com.example.desafio_android_edson_ferreira.utils.Constants
+import com.example.desafio_android_edson_ferreira.utils.exception.MarvelApiException
 import kotlinx.android.synthetic.main.fragment_list_characters.*
 import java.util.*
 
@@ -81,6 +82,10 @@ class FragmentListCharacters : Fragment() {
             if (isLoading) {
                 list_error.visibility = View.GONE
             }
+        })
+
+        viewModel.exception.observe(this, androidx.lifecycle.Observer { exception ->
+            MarvelApiException(exception,context!!).showError()
         })
     }
 }

@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.desafio_android_edson_ferreira.R
 import com.example.desafio_android_edson_ferreira.screens.characterhq.viewmodel.CharacterHQViewModel
 import com.example.desafio_android_edson_ferreira.utils.Util
+import com.example.desafio_android_edson_ferreira.utils.exception.MarvelApiException
 import kotlinx.android.synthetic.main.fragment_character_hq.*
 
 class FragmentCharacterHQ : Fragment() {
@@ -68,6 +69,10 @@ class FragmentCharacterHQ : Fragment() {
                 lnComic.visibility = View.GONE
                 error.visibility = View.GONE
             }
+        })
+
+        viewModel.exception.observe(this, androidx.lifecycle.Observer { exception ->
+            MarvelApiException(exception,context!!).showError()
         })
     }
 }

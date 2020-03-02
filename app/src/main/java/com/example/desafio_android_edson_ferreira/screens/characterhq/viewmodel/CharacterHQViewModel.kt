@@ -17,6 +17,7 @@ class CharacterHQViewModel : ViewModel() {
     var characters: MutableLiveData<ArrayList<Characters>> = MutableLiveData()
     var charactersLoadError = MutableLiveData<Boolean>()
     var loading = MutableLiveData<Boolean>()
+    var exception = MutableLiveData<Throwable>()
     var id = 0
 
     @Inject
@@ -48,7 +49,7 @@ class CharacterHQViewModel : ViewModel() {
                     override fun onError(e: Throwable) {
                         charactersLoadError.value = true
                         loading.value = false
-                        Log.e("erro", e.toString())
+                        exception.value = e
                     }
                 })
         )
