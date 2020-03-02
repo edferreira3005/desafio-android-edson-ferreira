@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), ListCharactersAdapter.OnClickCharacter
             supportFragmentManager.beginTransaction()
                 .add(R.id.frame, FragmentListCharacters(), Constants.TAG_CHARACTER_INFO)
                 .disallowAddToBackStack()
+                .setCustomAnimations(R.anim.slide_to_left,R.anim.slide_from_right)
                 .commit()
         }else if(currentFragment is FragmentCharacterHQ){
             openCharacterInfo()
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity(), ListCharactersAdapter.OnClickCharacter
         supportFragmentManager.beginTransaction()
             .add(R.id.frame, fragment, Constants.TAG_CHARACTER_HQ)
             .disallowAddToBackStack()
+            .setCustomAnimations(R.anim.slide_from_right,R.anim.slide_to_left)
             .commit()
     }
 
@@ -74,6 +76,7 @@ class MainActivity : AppCompatActivity(), ListCharactersAdapter.OnClickCharacter
 
         removeFragments()
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.slide_from_right,R.anim.slide_to_left)
             .add(R.id.frame, fragment, Constants.TAG_CHARACTER_INFO)
             .disallowAddToBackStack()
             .commit()
