@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/imgComic"
@@ -31,6 +31,7 @@
             android:maxLines="3"
             android:ellipsize="end"
             android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:text="@string/titulo_comic"/>
@@ -39,7 +40,8 @@
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.3"
+            android:layout_weight="1.4"
+            android:fontFamily="sans-serif"
             android:text="@string/descricao_personagem"
             android:layout_margin="20dp"
             android:maxLines="3"
@@ -53,6 +55,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="sans-serif-black"
             android:maxLines="3"
             android:ellipsize="end"
             android:text="@string/preco"

@@ -4,6 +4,7 @@
     android:id="@+id/lnCharacter"
     android:layout_width="match_parent"
     android:background="@color/colorPrimary"
+    android:elevation="10dp"
     android:layout_height="400dp">
 
     <ImageView
@@ -20,6 +21,7 @@
         android:textColor="@android:color/white"
         android:gravity="center"
         android:maxLines="3"
+        android:fontFamily="sans-serif-black"
         android:ellipsize="end"
         android:text="@string/nome_personagem"
         android:textStyle="bold"

@@ -51,7 +51,7 @@ class FragmentCharacterHQ : Fragment() {
 
                 if(character.lista_preco != null){
                     if(character.lista_preco!!.isNotEmpty())
-                        tvPrice.text = character.lista_preco!![0].price.toString()
+                        tvPrice.text = tvPrice.text.toString().replace("__PRECO",character.lista_preco!![0].price.toString())
                 }
             }else
                 error.visibility = View.VISIBLE

@@ -5,5 +5,5 @@
     <string name="descricao_personagem">Descrição do personagem</string>
     <string name="hq">HQ Mais Cara</string>
     <string name="titulo_comic">Título do quadrinho</string>
-    <string name="preco">preco</string>
+    <string name="preco">Price: $__PRECO</string>
 </resources>
